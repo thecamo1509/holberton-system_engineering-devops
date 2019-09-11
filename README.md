@@ -1,0 +1,1 @@
+**In this repository we will be facing shell exercises**
