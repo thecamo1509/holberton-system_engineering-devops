@@ -7,6 +7,6 @@ do
 	then
 		echo "Hi"
 	fi
-	echo "Holberton School"	
-	x=$(( x + 1 ))
+echo "Holberton School"	
+x=$(( x + 1 ))
 done
