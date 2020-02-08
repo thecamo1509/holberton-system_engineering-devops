@@ -3,5 +3,5 @@
 LS="$(ls)"
 for x in $LS;
 do
-	echo $x | cut --complement -d "-" -f 1
+	echo "$x" | cut --complement -d "-" -f 1
 done
