@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This will create a clock
+x="0";
+while [ $x -le 12 ];
+do
+echo "Hour: $x"
+y="1";
+	while [ $y -le 59 ]
+	do
+	echo "$y"
+	y=$((++y))
+	done
+x=$((++x))
+done
