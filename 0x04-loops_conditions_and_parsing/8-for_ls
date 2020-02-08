@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This will remove before the dash
+LS="$(ls)"
+for x in $LS;
+do
+	echo $x | cut --complement -d "-" -f 1
+done
