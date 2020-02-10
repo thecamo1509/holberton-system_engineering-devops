@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#This will create a loop with signals
+message()
+{
+	echo "I am invincible!!!"
+}
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap break SIGINT
+	trap message SIGTERM
+done
