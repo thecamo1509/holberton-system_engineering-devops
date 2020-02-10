@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#This will create a loop with ...
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap break SIGINT
+done
