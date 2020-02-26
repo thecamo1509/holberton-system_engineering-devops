@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Showing the ipv4
+ifconfig | grep "inet " | cut -d ":" --complement -f1 | cut -d " " -f1
