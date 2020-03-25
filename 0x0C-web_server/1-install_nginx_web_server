@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This will install Nginx
 sudo apt -y update
 sudo apt -y install nginx
 echo "Holberton School" >> /var/www/html/index.html
