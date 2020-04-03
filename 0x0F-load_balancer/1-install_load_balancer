@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+sudo add-apt-repository ppa:vbernat/haproxy-1.8
 sudo apt-get update
 sudo apt-get install haproxy
-sudo echo "frontend localnodes
+echo "frontend localnodes
     bind *:80
     mode http
     default_backend nodes
