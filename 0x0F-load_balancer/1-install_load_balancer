@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 #Installing load balancer
-sudo add-apt-repository ppa:vbernat/haproxy-1.8
 sudo apt-get update
-sudo apt-get install haproxy
+sudo apt-get -y install haproxy=1.6.\*
 echo "frontend localnodes
     bind *:80
     mode http
