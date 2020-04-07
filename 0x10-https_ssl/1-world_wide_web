@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#Display subdomain's information
+if [ $# -eq 2 ]
+then
+   dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk -F'.' '{print $1 $4"."$5"."$6"."$7}' | awk '{print "The subdomain "$1" is a "$4" record and points to "$5}'
+else
+   dig "www.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk -F'.' '{print $1 $4"."$5"."$6"."$7}' | awk '{print "The subdomain "$1" is a "$4" record and points to "$5}'
+   dig "lb-01.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk -F'.' '{print $1 $4"."$5"."$6"."$7}' | awk '{print "The subdomain "$1" is a "$4" record and points to "$5}'
+   dig "web-01.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk -F'.' '{print $1 $4"."$5"."$6"."$7}' | awk '{print "The subdomain "$1" is a "$4" record and points to "$5}'
+   dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk -F'.' '{print $1 $4"."$5"."$6"."$7}' | awk '{print "The subdomain "$1" is a "$4" record and points to "$5}'
+fi
