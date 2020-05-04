@@ -7,18 +7,18 @@ from sys import argv
 
 if __name__ == "__main__":
     tasks = requests.get('https://jsonplaceholder.typicode.com/todos',
-                         params={"userId": argv[1]})
-    user = requests.get('https://jsonplaceholder.typicode.com/users',
-                        params={"id": argv[1]})
+                         params={"userId": argv[1]}).json()
+    user = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                        .format(argv[1])).json()
     task_list = []
-    user_id = user.json()[0]
+    user_id = argv[1]
     main_dict = {}
-    for task in tasks.json():
+    for task in tasks:
         task_dict = {}
         task_dict["task"] = task.get('title')
         task_dict["completed"] = task.get('completed')
-        task_dict["username"] = user.json()[0].get('name')
+        task_dict["username"] = user.get('name')
         task_list.append(task_dict)
     main_dict[argv[1]] = task_list
-    with open("{}.json".format(user_id.get('id')), 'w') as file:
+    with open("{}.json".format(user_id), 'w') as file:
         task_json = json.dump(main_dict, file)
