@@ -17,7 +17,7 @@ if __name__ == "__main__":
         task_dict = {}
         task_dict["task"] = task.get('title')
         task_dict["completed"] = task.get('completed')
-        task_dict["username"] = user.get('name')
+        task_dict["username"] = user.get('username')
         task_list.append(task_dict)
     main_dict[argv[1]] = task_list
     task_json = json.dumps(main_dict)
