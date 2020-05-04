@@ -13,7 +13,8 @@ if __name__ == "__main__":
     user_name = user.json()[0]["name"]
     user_id = user.json()[0]["id"]
     with open('{}.csv'.format(user_id), mode='w') as csv_file:
-        csv_file_writer = csv.writer(csv_file)
+        csv_file_writer = csv.writer(csv_file, delimiter=',', quotechar='"',
+                                     quoting=csv.QUOTE_ALL)
         for task in tasks.json():
             task_status = task["completed"]
             task_title = task["title"]
