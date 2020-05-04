@@ -15,7 +15,7 @@ if __name__ == "__main__":
         task_list = []
         task_dict = {"username": "", "task": "", "completed": ""}
         for task in tasks.json():
-            task_dict["username"] = user["name"]
+            task_dict["username"] = user["username"]
             task_dict["task"] = task["title"]
             task_dict["completed"] = task["completed"]
             task_list.append(task_dict)
