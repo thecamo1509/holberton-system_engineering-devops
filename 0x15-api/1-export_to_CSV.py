@@ -17,4 +17,5 @@ if __name__ == "__main__":
         for task in tasks.json():
             task_status = task["completed"]
             task_title = task["title"]
-            csv_file_writer.writerow([user_id, user_name, task_status, task_title])
+            csv_file_writer.writerow([user_id, user_name, task_status,
+                                     task_title])
