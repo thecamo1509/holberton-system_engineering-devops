@@ -20,5 +20,5 @@ if __name__ == "__main__":
         task_dict["username"] = user.get('name')
         task_list.append(task_dict)
     main_dict[argv[1]] = task_list
-    with open("{}.json".format(user_id), 'w') as file:
+    with open("{}.json".format(user_id), 'w', newline='') as file:
         task_json = json.dump(main_dict, file)
