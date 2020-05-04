@@ -11,14 +11,14 @@ if __name__ == "__main__":
     user = requests.get('https://jsonplaceholder.typicode.com/users',
                         params={"id": argv[1]})
     task_list = []
-    user_id = user.json()[0]["id"]
-    main_dict = {"{}".format(user_id): task_list}
+    user_id = user.json()[0]
+    main_dict = {"{}".format(user_id.get('id')): task_list}
     task_dict = {"task": "", "completed": "", "username": ""}
     for task in tasks.json():
-        task_dict["task"] = task["title"]
-        task_dict["completed"] = task["completed"]
-        task_dict["username"] = user.json()[0]["name"]
+        task_dict["task"] = task.get('title')
+        task_dict["completed"] = task.get('completed')
+        task_dict["username"] = user.json()[0].get('name')
         task_list.append(task_dict)
         task_dict = {"task": "", "completed": "", "username": ""}
-    with open("{}.json".format(user_id), 'w') as file:
+    with open("{}.json".format(user_id.get('id')), 'w') as file:
         task_json = json.dump(main_dict, file)
