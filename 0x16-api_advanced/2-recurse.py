@@ -5,7 +5,7 @@ import requests
 
 def recurse(subreddit, hot_list=[], after=''):
     """Recursive function to get the hot list of a subreddit"""
-    response = requests.get('https://www.reddit.com/r/{}}/hot.json?after={}'
+    response = requests.get('https://www.reddit.com/r/{}/hot.json?after={}'
                             .format(subreddit, after),
                             headers={'User-Agent': 'Camilo@holberton.com'},
                             allow_redirects=False)
